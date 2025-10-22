@@ -29,13 +29,7 @@ spec:
     app: wil-playground
   ports:
     - protocol: TCP
+      nodePort: 30080
       port: 8081
       targetPort: 8888
-  type: LoadBalancer
----
-apiVersion: v1
-kind: Endpoints
-metadata:
-  name: wil-playground
-  namespace: dev
-subsets: []
+  type: NodePort 
